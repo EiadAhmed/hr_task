@@ -47,7 +47,6 @@ api_patterns = [
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include((api_patterns, "api"), namespace="api")),
-    path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.jwt')),
     path('api/employees/', include('employees.urls')),
     path('api/departments/', include('departments.urls')),

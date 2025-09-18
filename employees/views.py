@@ -20,7 +20,7 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = ['department', 'designation', 'is_active']
+    filterset_fields = ['department', 'designation', 'user__is_active']
     search_fields = ['name', 'email', 'phone', 'designation']
     ordering_fields = ['name', 'join_date', 'salary']
     ordering = ['name']
